@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryotaro Kawata | Academic CV</title>
+  <meta name="description" content="Academic profile and CV of Ryotaro Kawata." />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --surface: #ffffff;
+      --surface-soft: #f1f4fb;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --line: #d8deea;
+      --accent: #274690;
+      --accent-soft: #e8eefc;
+      --shadow: 0 10px 30px rgba(39, 70, 144, 0.08);
+      --radius: 18px;
+      --max-width: 980px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1421;
+        --surface: #151d2d;
+        --surface-soft: #1a2438;
+        --text: #ecf1ff;
+        --muted: #b2bdd4;
+        --line: #2a3550;
+        --accent: #8fb3ff;
+        --accent-soft: rgba(143, 179, 255, 0.12);
+        --shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 36px 0 72px;
+    }
+
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 36px;
+      margin-bottom: 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .name {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid transparent;
+      font-size: 0.92rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 14px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .timeline,
+    .paper-list,
+    .award-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item,
+    .paper-item,
+    .award-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface-soft);
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .entry-title {
+      margin: 0;
+      font-size: 1.03rem;
+      font-weight: 700;
+    }
+
+    .entry-date {
+      color: var(--muted);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .entry-subtitle,
+    .entry-meta,
+    .note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .paper-title {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .paper-meta {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      color: var(--muted);
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.92rem;
+    }
+
+    .helper {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 20px;
+      }
+
+      .hero,
+      .section-card {
+        padding: 22px;
+      }
+
+      .contact-list {
+        flex-direction: column;
+      }
+
+      .contact-list a,
+      .contact-list span {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <h1 class="name" id="name"></h1>
+          <p class="tagline" id="tagline"></p>
+        </div>
+        <div class="badge" id="status-badge"></div>
+      </div>
+      <ul class="contact-list" id="contact-list"></ul>
+      <div class="helper">
+        To update this page later, you mostly only need to edit the <strong>DATA</strong> object near the bottom of this file.
+        The HTML structure and rendering logic are separated to keep the page easy to extend.
+      </div>
+    </section>
+
+    <div class="layout">
+      <section class="section-card">
+        <h2 class="section-title">Education</h2>
+        <ul class="timeline" id="education-list"></ul>
+      </section>
+
+      <section class="section-card">
+        <h2 class="section-title">Experience</h2>
+        <ul class="timeline" id="experience-list"></ul>
+      </section>
+
+      <section class="section-card">
+        <h2 class="section-title">Papers</h2>
+        <ol class="paper-list" id="paper-list"></ol>
+        <p class="note" id="paper-note"></p>
+      </section>
+
+      <section class="section-card">
+        <h2 class="section-title">Awards</h2>
+        <ul class="award-list" id="award-list"></ul>
+      </section>
+    </div>
+
+    <p class="footer">Ryotaro Kawata</p>
+  </main>
+
+  <script>
+    // ============================================================
+    // Edit this DATA object when you want to update your website.
+    // You can safely add new sections later by following the same pattern.
+    // ============================================================
+    const DATA = {
+      profile: {
+        name: "Ryotaro Kawata",
+        tagline: "Ph.D. studnet in the University of Tokyo. Machine learning theory, generative models, and statistical learning.",
+        statusBadge: "Academic CV",
+        contacts: [
+          {
+            type: "Email",
+            label: "Kawata-ryotaro725@g.ecc.u-tokyo.ac.jp",
+            href: "mailto:Kawata-ryotaro725@g.ecc.u-tokyo.ac.jp"
+          },
+          {
+            type: "Website",
+            label: "Google Scholar",
+            href: "https://scholar.google.com/citations?user=MJvufWcAAAAJ&hl=en"
+          }
+        ]
+      },
+
+      education: [
+        {
+          institution: "The University of Tokyo",
+          location: "Tokyo",
+          degree: "Bachelor in Engineering",
+          period: "2020 - 2024"
+        },
+        {
+          institution: "The University of Tokyo",
+          location: "Tokyo",
+          degree: "Master in Information Science and Technology",
+          detail: "Supervisor: Taiji Suzuki",
+          period: "2024 - 2026"
+        },
+        {
+          institution: "The University of Tokyo",
+          location: "Tokyo",
+          degree: "Ph.D. in Information Science and Technology",
+          detail: "Supervisor: Taiji Suzuki",
+          period: "2026 - present"
+        }
+      ],
+
+      experience: [
+        {
+          organization: "Agency for Science, Technology and Research (A*STAR)",
+          location: "Singapore",
+          role: "Research Attachment",
+          detail: "Host: Dr. Atsushi Nitanda",
+          period: "Oct - Dec 2025"
+        },
+        {
+          organization: "RIKEN AIP",
+          location: "Japan",
+          role: "Research Part-time Worker II, Deep Learning Theory Team",
+          detail: "Team Director: Taiji Suzuki",
+          period: "2024 - present"
+        }
+      ],
+
+      papers: [
+        {
+          title: "Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality",
+          authors: "Ryotaro Kawata, Taiji Suzuki",
+          venue: "ICLR 2026"
+        },
+        {
+          title: "From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers",
+          authors: "Ryotaro Kawata*, Yujin Song*, Alberto Bietti, Naoki Nishikawa, Taiji Suzuki, Samuel Vaiter, Denny Wu",
+          venue: "NeurIPS 2025 Spotlight"
+        },
+        {
+          title: "When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammars",
+          authors: "Rei Higuchi*, Ryotaro Kawata*, Naoki Nishikawa*, Kazusato Oko, Shoichiro Yamaguchi, Sosuke Kobayashi, Seiya Tokui, Kohei Hayashi, Daisuke Okanohara, Taiji Suzuki",
+          venue: "COLM 2025"
+        },
+        {
+          title: "Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based Learning",
+          authors: "Ryotaro Kawata*, Kohsei Matsutani*, Yuri Kinoshita, Naoki Nishikawa, Taiji Suzuki",
+          venue: "ICML 2025"
+        },
+        {
+          title: "Direct Distributional Optimization for Provable Alignment of Diffusion Models",
+          authors: "Ryotaro Kawata, Kazusato Oko, Atsushi Nitanda, Taiji Suzuki",
+          venue: "ICLR 2025"
+        }
+      ],
+
+      paperNote: "* denotes equal contribution.",
+
+      awards: [
+        {
+          name: "Good Presentation Awards, Japanese Joint Statistical Meeting",
+          period: "2024"
+        },
+        {
+          name: "Dean's Award, the Graduate School of Information Science and Technology, The University of Tokyo",
+          period: "2026"
+        }
+      ]
+    };
+
+    function renderContacts() {
+      const container = document.getElementById("contact-list");
+      container.innerHTML = DATA.profile.contacts
+        .map((item) => {
+          if (item.href) {
+            return `<li><a href="${item.href}" target="_blank" rel="noreferrer">${item.label}</a></li>`;
+          }
+          return `<li><span>${item.label}</span></li>`;
+        })
+        .join("");
+    }
+
+    function renderTimeline(listId, items, keys) {
+      const container = document.getElementById(listId);
+      container.innerHTML = items
+        .map((item) => `
+          <li class="timeline-item">
+            <div class="entry-header">
+              <h3 class="entry-title">${item[keys.title]}</h3>
+              <span class="entry-date">${item.period || ""}</span>
+            </div>
+            ${item.location ? `<p class="entry-subtitle">${item.location}</p>` : ""}
+            ${item[keys.subtitle] ? `<p class="entry-meta">${item[keys.subtitle]}</p>` : ""}
+            ${item.detail ? `<p class="entry-meta">${item.detail}</p>` : ""}
+          </li>
+        `)
+        .join("");
+    }
+
+    function renderPapers() {
+      const container = document.getElementById("paper-list");
+      container.innerHTML = DATA.papers
+        .map((paper) => `
+          <li class="paper-item">
+            <p class="paper-title">${paper.title}</p>
+            <p class="paper-meta">${paper.authors}</p>
+            <p class="paper-meta">${paper.venue}</p>
+          </li>
+        `)
+        .join("");
+
+      document.getElementById("paper-note").textContent = DATA.paperNote || "";
+    }
+
+    function renderAwards() {
+      const container = document.getElementById("award-list");
+      container.innerHTML = DATA.awards
+        .map((award) => `
+          <li class="award-item">
+            <div class="entry-header">
+              <h3 class="entry-title">${award.name}</h3>
+              <span class="entry-date">${award.period || ""}</span>
+            </div>
+          </li>
+        `)
+        .join("");
+    }
+
+    function renderProfile() {
+      document.getElementById("name").textContent = DATA.profile.name;
+      document.getElementById("tagline").textContent = DATA.profile.tagline;
+      document.getElementById("status-badge").textContent = DATA.profile.statusBadge;
+    }
+
+    function init() {
+      renderProfile();
+      renderContacts();
+      renderTimeline("education-list", DATA.education, {
+        title: "institution",
+        subtitle: "degree"
+      });
+      renderTimeline("experience-list", DATA.experience, {
+        title: "organization",
+        subtitle: "role"
+      });
+      renderPapers();
+      renderAwards();
+    }
+
+    init();
+  </script>
+</body>
+</html>
