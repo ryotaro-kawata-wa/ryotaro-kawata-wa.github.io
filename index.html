@@ -9,55 +9,70 @@
   <link rel="canonical" href="https://ryotaro-kawata-wa.github.io/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23274690'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='30' fill='white'%3ERK%3C/text%3E%3C/svg%3E">
   <style>
-    :root { --bg:#f7f8fc; --surface:#fff; --soft:#edf1fa; --text:#1f2937; --muted:#566174; --line:#d8deea; --accent:#274690; --radius:18px; }
-    @media (prefers-color-scheme:dark) { :root { --bg:#0f1421; --surface:#151d2d; --soft:#1c2943; --text:#ecf1ff; --muted:#b2bdd4; --line:#33415c; --accent:#a7c3ff; } }
+    :root { --bg:#fff; --surface:#fff; --soft:#edf1fa; --text:#202936; --muted:#566174; --line:#dce2eb; --accent:#274690; }
+    @media (prefers-color-scheme:dark) { :root { --bg:#111827; --surface:#111827; --soft:#1c2943; --text:#ecf1ff; --muted:#b2bdd4; --line:#33415c; --accent:#a7c3ff; } }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:1.5rem; }
-    body { margin:0; background:var(--bg); color:var(--text); font:1rem/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
+    body { margin:0; background:var(--bg); color:var(--text); font:1rem/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }
     a { color:var(--accent); text-decoration-thickness:1px; text-underline-offset:.22em; }
     a:hover { text-decoration:underline; }
     a:focus-visible,button:focus-visible { outline:3px solid var(--accent); outline-offset:5px; border-radius:3px; }
     button { font:inherit; }
     h1,h2,h3,p { margin:0; }
     h3 { font-size:1rem; line-height:1.55; }
-    .page { width:min(100% - 2.5rem,980px); margin:auto; padding:2.5rem 0 3rem; }
+    .page { width:min(100% - 3rem,960px); margin:auto; padding:2.5rem 0 2rem; }
     .skip-link { position:absolute; left:1rem; top:-6rem; z-index:5; padding:.7rem 1rem; background:var(--surface); }
     .skip-link:focus { top:1rem; }
-    .hero { border:1px solid var(--line); border-top:4px solid var(--accent); border-radius:var(--radius); background:var(--surface); padding:2.3rem 2.5rem 1.6rem; }
-    .hero-top { display:flex; gap:1rem; justify-content:space-between; align-items:center; margin-bottom:1.15rem; }
-    .eyebrow { color:var(--accent); font-size:.875rem; font-weight:650; letter-spacing:.1em; text-transform:uppercase; }
-    .print-button { border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--text); padding:.4rem .8rem; font-size:.875rem; cursor:pointer; }
+    .hero { border:0; padding:0; }
+    .hero-top { display:flex; gap:1rem; justify-content:space-between; align-items:center; margin-bottom:.4rem; }
+    .eyebrow { color:var(--muted); font-size:.875rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+    .print-button { border:1px solid var(--line); border-radius:5px; background:var(--surface); color:var(--muted); padding:.3rem .65rem; font-size:.875rem; cursor:pointer; }
     .print-button:hover { background:var(--soft); }
-    h1 { font-size:clamp(2rem,5vw,3rem); line-height:1.18; letter-spacing:-.035em; margin-bottom:.6rem; }
-    .affiliation { font-size:1.1rem; }
-    .intro { color:var(--muted); margin-top:.65rem; max-width:46rem; }
-    .contacts { list-style:none; padding:0; margin:1.25rem 0 0; display:flex; gap:.5rem 1.4rem; flex-wrap:wrap; }
+    h1 { font-size:clamp(2rem,4.5vw,2.55rem); line-height:1.2; letter-spacing:-.035em; margin-bottom:.35rem; }
+    .affiliation { font-size:1.0625rem; }
+    .intro { color:var(--muted); margin-top:.4rem; max-width:48rem; }
+    .contacts { list-style:none; padding:0; margin:.75rem 0 0; display:flex; gap:.4rem 1.3rem; flex-wrap:wrap; }
     .contacts a { overflow-wrap:anywhere; font-size:.9375rem; }
-    .section-nav { display:flex; gap:.4rem 1.5rem; flex-wrap:wrap; margin-top:1.6rem; padding-top:1rem; border-top:1px solid var(--line); }
+    .section-nav { display:flex; gap:.35rem 1.5rem; flex-wrap:wrap; margin-top:1rem; padding:.55rem 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
     .section-nav a { color:var(--muted); font-size:.875rem; text-decoration:none; padding:.15rem 0; }
     .section-nav a:hover { color:var(--accent); text-decoration:underline; }
-    .section-card { margin-top:1.5rem; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:2rem 2.5rem; }
-    .section-head { display:flex; gap:.5rem 1rem; align-items:baseline; justify-content:space-between; flex-wrap:wrap; margin-bottom:1.5rem; }
-    h2 { color:var(--accent); font-size:1.2rem; font-weight:650; letter-spacing:.015em; }
+    .section-card { margin-top:2rem; padding:0; }
+    .section-head { display:flex; gap:.4rem 1rem; align-items:baseline; justify-content:space-between; flex-wrap:wrap; margin-bottom:1.05rem; padding-bottom:.45rem; border-bottom:1px solid var(--line); }
+    h2 { color:var(--text); font-size:1.25rem; font-weight:650; letter-spacing:-.015em; }
     .note { color:var(--muted); font-size:.875rem; }
     .papers,.entries { list-style:none; padding:0; margin:0; }
-    .paper + .paper { margin-top:1.4rem; padding-top:1.4rem; border-top:1px solid var(--line); }
-    .venue { font-size:.875rem; font-weight:650; color:var(--accent); margin-bottom:.3rem; }
-    .spotlight { display:inline-block; background:var(--soft); border-radius:4px; padding:0 .4rem; margin-left:.3rem; }
-    .paper h3 { font-size:1.065rem; line-height:1.5; }
+    .paper { display:grid; grid-template-columns:8rem minmax(0,1fr); column-gap:1.5rem; }
+    .paper + .paper { margin-top:1.25rem; }
+    .venue { grid-column:1; grid-row:1 / 4; font-size:.875rem; font-weight:650; color:var(--accent); padding-top:.1rem; }
+    .spotlight { display:block; font-size:.8125rem; font-weight:500; margin-top:.2rem; }
+    .paper h3 { grid-column:2; grid-row:1; font-size:1rem; line-height:1.5; }
     .paper h3 a { color:var(--text); text-decoration:none; }
     .paper h3 a:hover { color:var(--accent); text-decoration:underline; }
-    .authors { color:var(--muted); margin-top:.35rem; }
+    .authors { grid-column:2; grid-row:2; color:var(--muted); margin-top:.15rem; }
     .authors strong { color:var(--text); font-weight:600; }
-    .paper-links { display:flex; gap:1.1rem; margin-top:.4rem; font-size:.875rem; }
+    .paper-links { grid-column:2; grid-row:3; display:flex; gap:1rem; margin-top:.15rem; font-size:.875rem; }
     .paper-links a { padding:.1rem 0; }
-    .entry { display:grid; grid-template-columns:9rem minmax(0,1fr); gap:1rem; }
-    .entry + .entry { margin-top:1.35rem; }
+    .entry { display:grid; grid-template-columns:8rem minmax(0,1fr); gap:1.5rem; }
+    .entry + .entry { margin-top:1rem; }
     .date { color:var(--muted); font-size:.9375rem; font-variant-numeric:tabular-nums; padding-top:.06rem; }
     .detail,.location { color:var(--muted); }
     .detail { font-size:.9375rem; }
-    footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; margin-top:1.5rem; padding:0 .2rem; color:var(--muted); font-size:.875rem; }
-    @media (max-width:640px) { .page { width:calc(100% - 1.5rem); padding-top:1rem; } .hero,.section-card { padding:1.4rem; } .hero-top { align-items:flex-start; flex-wrap:wrap; } .entry { grid-template-columns:1fr; gap:.2rem; } .entry + .entry { margin-top:1.5rem; } .contacts { flex-direction:column; gap:.5rem; } .section-nav { gap:.4rem 1rem; } .section-head { margin-bottom:1.2rem; } }
+    footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; margin-top:2rem; padding-top:.75rem; border-top:1px solid var(--line); color:var(--muted); font-size:.875rem; }
+    @media (max-width:640px) {
+      .page { width:calc(100% - 2.25rem); padding-top:1.4rem; }
+      .hero-top { align-items:center; flex-wrap:wrap; }
+      .paper { display:block; }
+      .venue { margin-bottom:.25rem; }
+      .spotlight { display:inline; margin-left:.4rem; }
+      .paper + .paper { margin-top:1.35rem; }
+      .entry { grid-template-columns:1fr; gap:.15rem; }
+      .entry + .entry { margin-top:1.2rem; }
+      .contacts { gap:.35rem 1rem; }
+      .contacts li:first-child { flex-basis:100%; }
+      .section-nav { gap:.35rem 1.1rem; }
+      .section-card { margin-top:1.65rem; }
+      .section-head { margin-bottom:1rem; }
+    }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     @page { size:A4; margin:16mm 17mm; }
     @media print {
@@ -75,15 +90,16 @@
       .contacts a { font-size:9pt; }
       .section-nav,.print-button,.skip-link { display:none !important; }
       .section-card { margin-top:15pt; }
-      .section-head { margin-bottom:9pt; break-after:avoid; }
+      .section-head { margin-bottom:9pt; padding-bottom:3pt; break-after:avoid; }
       h2 { font-size:12pt; }
       h3,.paper h3 { font-size:10pt; }
       .paper,.entry { break-inside:avoid; }
-      .paper + .paper { margin-top:9pt; padding-top:9pt; }
+      .paper { display:block; }
+      .paper + .paper { margin-top:9pt; }
       .paper-links { margin-top:3pt; }
       .entry { grid-template-columns:85pt minmax(0,1fr); gap:10pt; }
       .entry + .entry { margin-top:9pt; }
-      .spotlight { padding:0; }
+      .spotlight { display:inline; padding:0; margin-left:4pt; }
       a { text-decoration:none; }
       footer { margin-top:15pt; }
     }
@@ -96,7 +112,7 @@
       <div class="hero-top"><p class="eyebrow">Research CV</p><button class="print-button" type="button" id="print-cv" hidden>Print / Save PDF</button></div>
       <h1>Ryotaro Kawata</h1>
       <p class="affiliation">Ph.D. student · The University of Tokyo</p>
-      <p class="intro">My research interests include machine learning theory, generative models, and statistical learning.</p>
+      <p class="intro">Advised by Taiji Suzuki. My research interests include machine learning theory, generative models, and statistical learning.</p>
       <ul class="contacts" aria-label="Contact and profiles">
         <li><a href="mailto:kawata-ryotaro725@g.ecc.u-tokyo.ac.jp">kawata-ryotaro725@g.ecc.u-tokyo.ac.jp</a></li>
         <li><a href="https://scholar.google.com/citations?user=MJvufWcAAAAJ&amp;hl=en">Google Scholar</a></li>
