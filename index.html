@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Ryotaro Kawata | Research CV</title>
+  <title data-ja="Ryotaro Kawata | 研究CV">Ryotaro Kawata | Research CV</title>
   <meta name="description" content="Research CV of Ryotaro Kawata, Ph.D. student at the University of Tokyo. Machine learning theory, generative models, and statistical learning.">
   <link rel="canonical" href="https://ryotaro-kawata-wa.github.io/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23274690'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='30' fill='white'%3ERK%3C/text%3E%3C/svg%3E">
@@ -25,6 +25,12 @@
     .skip-link:focus { top:1rem; }
     .hero { border:0; padding:0; }
     .hero-top { display:flex; gap:1rem; justify-content:space-between; align-items:center; margin-bottom:.4rem; }
+    .header-actions { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; }
+    .language-switch { display:flex; gap:.15rem; align-items:center; }
+    .language-switch[hidden] { display:none; }
+    .language-switch button { border:0; border-radius:4px; background:none; color:var(--muted); padding:.3rem .45rem; font-size:.8125rem; cursor:pointer; }
+    .language-switch button[aria-pressed="true"] { background:var(--soft); color:var(--accent); font-weight:700; }
+    .language-switch button:hover { color:var(--accent); }
     .eyebrow { color:var(--muted); font-size:.875rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
     .print-button { border:1px solid var(--line); border-radius:5px; background:var(--surface); color:var(--muted); padding:.3rem .65rem; font-size:.875rem; cursor:pointer; }
     .print-button:hover { background:var(--soft); }
@@ -89,7 +95,7 @@
       .intro { margin-top:5pt; }
       .contacts { margin-top:7pt; gap:5pt 12pt; }
       .contacts a { font-size:9pt; }
-      .section-nav,.print-button,.skip-link { display:none !important; }
+      .section-nav,.header-actions,.skip-link { display:none !important; }
       .section-card { margin-top:15pt; }
       .section-head { margin-bottom:9pt; padding-bottom:3pt; break-after:avoid; }
       h2 { font-size:12pt; }
@@ -107,88 +113,149 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#publications">Skip to publications</a>
+  <a class="skip-link" href="#publications" data-ja="論文一覧へ">Skip to publications</a>
   <div class="page">
     <header class="hero">
-      <div class="hero-top"><p class="eyebrow">Research CV</p><button class="print-button" type="button" id="print-cv" hidden>Print / Save PDF</button></div>
+      <div class="hero-top">
+        <p class="eyebrow" data-ja="研究CV">Research CV</p>
+        <div class="header-actions">
+          <div class="language-switch" role="group" aria-label="Language" data-ja-aria-label="表示言語" hidden>
+            <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+            <button type="button" data-language="ja" lang="ja" aria-label="日本語" aria-pressed="false">JA</button>
+          </div>
+          <button class="print-button" type="button" id="print-cv" hidden data-ja="印刷 / PDF保存">Print / Save PDF</button>
+        </div>
+      </div>
       <h1>Ryotaro Kawata</h1>
-      <p class="affiliation">Ph.D. student · The University of Tokyo</p>
-      <p class="intro">Advised by Taiji Suzuki. My research interests include machine learning theory, generative models, and statistical learning.</p>
-      <ul class="contacts" aria-label="Contact and profiles">
+      <p class="affiliation" data-ja="博士課程学生 · The University of Tokyo（東京大学）">Ph.D. student · The University of Tokyo</p>
+      <p class="intro" data-ja="Taiji Suzukiの指導のもと、機械学習理論・生成モデル・統計的学習を研究しています。">Advised by Taiji Suzuki. My research interests include machine learning theory, generative models, and statistical learning.</p>
+      <ul class="contacts" aria-label="Contact and profiles" data-ja-aria-label="連絡先・プロフィール">
         <li><a href="mailto:kawata-ryotaro725@g.ecc.u-tokyo.ac.jp">kawata-ryotaro725@g.ecc.u-tokyo.ac.jp</a></li>
         <li><a href="https://scholar.google.com/citations?user=MJvufWcAAAAJ&amp;hl=en">Google Scholar</a></li>
         <li><a href="https://github.com/ryotaro-kawata-wa">GitHub</a></li>
       </ul>
-      <nav class="section-nav" aria-label="CV sections"><a href="#publications">Publications</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#awards">Awards</a></nav>
+      <nav class="section-nav" aria-label="CV sections" data-ja-aria-label="CVの各項目"><a href="#publications" data-ja="論文">Publications</a><a href="#education" data-ja="学歴">Education</a><a href="#experience" data-ja="研究歴">Experience</a><a href="#awards" data-ja="受賞">Awards</a></nav>
     </header>
     <main>
       <!-- PUBLICATIONS: add new papers at the top; retain full author lists. -->
       <section class="section-card" id="publications" aria-labelledby="publications-title">
-        <div class="section-head"><h2 id="publications-title">Publications</h2><p class="note">* Equal contribution</p></div>
+        <div class="section-head"><h2 id="publications-title" data-ja="論文">Publications</h2><p class="note" data-ja="* 同等貢献">* Equal contribution</p></div>
         <ol class="papers">
           <li class="paper">
             <p class="venue">2026 · arXiv</p>
             <h3><a href="https://arxiv.org/abs/2605.24749">How Neural Reward Models Learn Features for Policy Optimization: A Single-Index Analysis</a></h3>
             <p class="authors">Rei Higuchi, <strong>Ryotaro Kawata</strong>, Akifumi Wachi, Shokichi Takakura, Kohei Miyaguchi, Taiji Suzuki</p>
-            <div class="paper-links"><a href="https://arxiv.org/abs/2605.24749" aria-label="Read How Neural Reward Models Learn Features for Policy Optimization: A Single-Index Analysis">Read paper <span aria-hidden="true">↗</span></a></div>
+            <div class="paper-links"><a href="https://arxiv.org/abs/2605.24749" aria-label="Read How Neural Reward Models Learn Features for Policy Optimization: A Single-Index Analysis" data-ja-aria-label="How Neural Reward Models Learn Features for Policy Optimization: A Single-Index Analysisを読む"><span data-ja="論文を読む">Read paper</span> <span aria-hidden="true">↗</span></a></div>
           </li>
           <li class="paper">
             <p class="venue">ICLR 2026</p>
             <h3><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/c44c4afd77d5ee760e7f4bed0c50f878-Abstract-Conference.html">Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality</a></h3>
             <p class="authors"><strong>Ryotaro Kawata</strong>, Taiji Suzuki</p>
-            <div class="paper-links"><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/c44c4afd77d5ee760e7f4bed0c50f878-Abstract-Conference.html" aria-label="Read Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality">Read paper <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2602.01863" aria-label="arXiv version of Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality">arXiv</a></div>
+            <div class="paper-links"><a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/c44c4afd77d5ee760e7f4bed0c50f878-Abstract-Conference.html" aria-label="Read Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality" data-ja-aria-label="Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimalityを読む"><span data-ja="論文を読む">Read paper</span> <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2602.01863" aria-label="arXiv version of Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality" data-ja-aria-label="Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax OptimalityのarXiv版">arXiv</a></div>
           </li>
           <li class="paper">
             <p class="venue">NeurIPS 2025 <span class="spotlight">Spotlight</span></p>
             <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/6499b639e8a4b5c9a780d9b88c09722f-Abstract-Conference.html">From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers</a></h3>
             <p class="authors"><strong>Ryotaro Kawata</strong>*, Yujin Song*, Alberto Bietti, Naoki Nishikawa, Taiji Suzuki, Samuel Vaiter, Denny Wu</p>
-            <div class="paper-links"><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/6499b639e8a4b5c9a780d9b88c09722f-Abstract-Conference.html" aria-label="Read From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers">Read paper <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2512.18634" aria-label="arXiv version of From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers">arXiv</a></div>
+            <div class="paper-links"><a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/6499b639e8a4b5c9a780d9b88c09722f-Abstract-Conference.html" aria-label="Read From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers" data-ja-aria-label="From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformersを読む"><span data-ja="論文を読む">Read paper</span> <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2512.18634" aria-label="arXiv version of From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers" data-ja-aria-label="From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in TransformersのarXiv版">arXiv</a></div>
           </li>
           <li class="paper">
             <p class="venue">COLM 2025</p>
             <h3><a href="https://openreview.net/forum?id=5UkUsRsWYx">When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammars</a></h3>
             <p class="authors">Rei Higuchi*, <strong>Ryotaro Kawata</strong>*, Naoki Nishikawa*, Kazusato Oko, Shoichiro Yamaguchi, Sosuke Kobayashi, Seiya Tokui, Kohei Hayashi, Daisuke Okanohara, Taiji Suzuki</p>
-            <div class="paper-links"><a href="https://openreview.net/forum?id=5UkUsRsWYx" aria-label="Read When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammars">Read paper <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2504.17562" aria-label="arXiv version of When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammars">arXiv</a></div>
+            <div class="paper-links"><a href="https://openreview.net/forum?id=5UkUsRsWYx" aria-label="Read When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammars" data-ja-aria-label="When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammarsを読む"><span data-ja="論文を読む">Read paper</span> <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2504.17562" aria-label="arXiv version of When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free Grammars" data-ja-aria-label="When Does Metadata Conditioning (NOT) Work for Language Model Pre-Training? A Study with Context-Free GrammarsのarXiv版">arXiv</a></div>
           </li>
           <li class="paper">
             <p class="venue">ICML 2025</p>
             <h3><a href="https://proceedings.mlr.press/v267/kawata25a.html">Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based Learning</a></h3>
             <p class="authors"><strong>Ryotaro Kawata</strong>*, Kohsei Matsutani*, Yuri Kinoshita, Naoki Nishikawa, Taiji Suzuki</p>
-            <div class="paper-links"><a href="https://proceedings.mlr.press/v267/kawata25a.html" aria-label="Read Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based Learning">Read paper <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2506.01656" aria-label="arXiv version of Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based Learning">arXiv</a></div>
+            <div class="paper-links"><a href="https://proceedings.mlr.press/v267/kawata25a.html" aria-label="Read Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based Learning" data-ja-aria-label="Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based Learningを読む"><span data-ja="論文を読む">Read paper</span> <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2506.01656" aria-label="arXiv version of Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based Learning" data-ja-aria-label="Mixture of Experts Provably Detect and Learn the Latent Cluster Structure in Gradient-Based LearningのarXiv版">arXiv</a></div>
           </li>
           <li class="paper">
             <p class="venue">ICLR 2025</p>
             <h3><a href="https://openreview.net/forum?id=Nvw2szDdmI">Direct Distributional Optimization for Provable Alignment of Diffusion Models</a></h3>
             <p class="authors"><strong>Ryotaro Kawata</strong>, Kazusato Oko, Atsushi Nitanda, Taiji Suzuki</p>
-            <div class="paper-links"><a href="https://openreview.net/forum?id=Nvw2szDdmI" aria-label="Read Direct Distributional Optimization for Provable Alignment of Diffusion Models">Read paper <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2502.02954" aria-label="arXiv version of Direct Distributional Optimization for Provable Alignment of Diffusion Models">arXiv</a></div>
+            <div class="paper-links"><a href="https://openreview.net/forum?id=Nvw2szDdmI" aria-label="Read Direct Distributional Optimization for Provable Alignment of Diffusion Models" data-ja-aria-label="Direct Distributional Optimization for Provable Alignment of Diffusion Modelsを読む"><span data-ja="論文を読む">Read paper</span> <span aria-hidden="true">↗</span></a><a href="https://arxiv.org/abs/2502.02954" aria-label="arXiv version of Direct Distributional Optimization for Provable Alignment of Diffusion Models" data-ja-aria-label="Direct Distributional Optimization for Provable Alignment of Diffusion ModelsのarXiv版">arXiv</a></div>
           </li>
         </ol>
       </section>
       <!-- EDUCATION -->
       <section class="section-card" id="education" aria-labelledby="education-title">
-        <div class="section-head"><h2 id="education-title">Education</h2></div>
-        <ul class="entries"><li class="entry"><p class="date">2026–present</p><div><h3>Ph.D. program in Information Science and Technology</h3><p>The University of Tokyo <span class="location">· Tokyo</span></p><p class="detail">Supervisor: Taiji Suzuki</p></div></li>
-          <li class="entry"><p class="date">2024–2026</p><div><h3>Master of Information Science and Technology</h3><p>The University of Tokyo <span class="location">· Tokyo</span></p><p class="detail">Supervisor: Taiji Suzuki</p></div></li>
-          <li class="entry"><p class="date">2020–2024</p><div><h3>Bachelor of Engineering</h3><p>The University of Tokyo <span class="location">· Tokyo</span></p></div></li></ul>
+        <div class="section-head"><h2 id="education-title" data-ja="学歴">Education</h2></div>
+        <ul class="entries"><li class="entry"><p class="date" data-ja="2026年–現在">2026–present</p><div><h3 data-ja="博士課程（情報理工学）">Ph.D. program in Information Science and Technology</h3><p><span data-ja="The University of Tokyo（東京大学）">The University of Tokyo</span> <span class="location">· Tokyo</span></p><p class="detail" data-ja="指導教員：Taiji Suzuki">Supervisor: Taiji Suzuki</p></div></li>
+          <li class="entry"><p class="date" data-ja="2024年–2026年">2024–2026</p><div><h3 data-ja="修士（情報理工学）">Master of Information Science and Technology</h3><p><span data-ja="The University of Tokyo（東京大学）">The University of Tokyo</span> <span class="location">· Tokyo</span></p><p class="detail" data-ja="指導教員：Taiji Suzuki">Supervisor: Taiji Suzuki</p></div></li>
+          <li class="entry"><p class="date" data-ja="2020年–2024年">2020–2024</p><div><h3 data-ja="学士（工学）">Bachelor of Engineering</h3><p><span data-ja="The University of Tokyo（東京大学）">The University of Tokyo</span> <span class="location">· Tokyo</span></p></div></li></ul>
       </section>
       <!-- EXPERIENCE -->
       <section class="section-card" id="experience" aria-labelledby="experience-title">
-        <div class="section-head"><h2 id="experience-title">Research experience</h2></div>
-        <ul class="entries"><li class="entry"><p class="date">Aug 2026–present</p><div><h3>CyberAgent AI Lab</h3><p class="detail">Intern</p></div></li>
-          <li class="entry"><p class="date">2024–present</p><div><h3>RIKEN AIP <span class="location">· Japan</span></h3><p class="detail">Research Part-time Worker II, Deep Learning Theory Team</p><p class="detail">Team Director: Taiji Suzuki</p></div></li>
-          <li class="entry"><p class="date">Oct–Dec 2025</p><div><h3>Agency for Science, Technology and Research (A*STAR) <span class="location">· Singapore</span></h3><p class="detail">Research Attachment</p><p class="detail">Host: Dr. Atsushi Nitanda</p></div></li>
-          <li class="entry"><p class="date">2024–2025</p><div><h3>Preferred Networks, Inc. <span class="location">· Japan</span></h3><p class="detail">Joint Researcher</p></div></li></ul>
+        <div class="section-head"><h2 id="experience-title" data-ja="研究歴">Research experience</h2></div>
+        <ul class="entries"><li class="entry"><p class="date" data-ja="2026年8月–現在">Aug 2026–present</p><div><h3>CyberAgent AI Lab</h3><p class="detail" data-ja="インターン">Intern</p></div></li>
+          <li class="entry"><p class="date" data-ja="2024年–現在">2024–present</p><div><h3><span data-ja="RIKEN AIP（理研AIP）">RIKEN AIP</span> <span class="location">· Japan</span></h3><p class="detail" data-ja="研究パートタイマーII（Deep Learning Theory Team）">Research Part-time Worker II, Deep Learning Theory Team</p><p class="detail" data-ja="チームリーダー：Taiji Suzuki">Team Director: Taiji Suzuki</p></div></li>
+          <li class="entry"><p class="date" data-ja="2025年10月–12月">Oct–Dec 2025</p><div><h3>Agency for Science, Technology and Research (A*STAR) <span class="location">· Singapore</span></h3><p class="detail" data-ja="研究滞在">Research Attachment</p><p class="detail" data-ja="受入研究者：Atsushi Nitanda">Host: Dr. Atsushi Nitanda</p></div></li>
+          <li class="entry"><p class="date" data-ja="2024年–2025年">2024–2025</p><div><h3>Preferred Networks, Inc. <span class="location">· Japan</span></h3><p class="detail" data-ja="共同研究者">Joint Researcher</p></div></li></ul>
       </section>
       <!-- AWARDS -->
       <section class="section-card" id="awards" aria-labelledby="awards-title">
-        <div class="section-head"><h2 id="awards-title">Awards</h2></div>
-        <ul class="entries"><li class="entry"><p class="date">2026</p><div><h3>Dean&#x27;s Award for outstanding research, IST, The University of Tokyo</h3></div></li>
-          <li class="entry"><p class="date">2024</p><div><h3>Good Presentation Awards, Japanese Joint Statistical Meeting</h3></div></li></ul>
+        <div class="section-head"><h2 id="awards-title" data-ja="受賞">Awards</h2></div>
+        <ul class="entries"><li class="entry"><p class="date" data-ja="2026年">2026</p><div><h3 data-ja="令和7（2025）年度 情報理工学系研究科長賞（研究業績）">Dean&#x27;s Award for outstanding research, IST, The University of Tokyo</h3></div></li>
+          <li class="entry"><p class="date" data-ja="2024年">2024</p><div><h3 data-ja="2024年度統計関連学会連合大会 優秀報告賞">Good Presentation Awards, Japanese Joint Statistical Meeting</h3></div></li></ul>
       </section>
     </main>
-    <footer><span>Ryotaro Kawata</span><span>Updated <time datetime="2026-09-27">September 27, 2026</time></span></footer>
+    <footer><span>Ryotaro Kawata</span><span><span data-ja="更新日">Updated</span> <time datetime="2026-09-27" data-ja="2026年9月27日">September 27, 2026</time></span></footer>
   </div>
   <script>
+    // English stays readable without JavaScript. Japanese translations live next
+    // to the corresponding English text in data-ja attributes.
+    const translations = [...document.querySelectorAll('[data-ja]')].map(element => ({
+      element,
+      en: element.textContent,
+      ja: element.dataset.ja
+    }));
+    const labelTranslations = [...document.querySelectorAll('[data-ja-aria-label]')].map(element => ({
+      element,
+      en: element.getAttribute('aria-label'),
+      ja: element.dataset.jaAriaLabel
+    }));
+    const description = document.querySelector('meta[name="description"]');
+    const englishDescription = description.content;
+    const languageSwitch = document.querySelector('.language-switch');
+    const languageButtons = [...languageSwitch.querySelectorAll('button')];
+    const validLanguage = language => language === 'en' || language === 'ja';
+
+    function preferredLanguage() {
+      const requested = new URL(window.location.href).searchParams.get('lang');
+      if (validLanguage(requested)) return requested;
+      try {
+        const saved = localStorage.getItem('cv-language');
+        if (validLanguage(saved)) return saved;
+      } catch { /* Language switching also works when storage is unavailable. */ }
+      return 'en';
+    }
+
+    function setLanguage(language, remember = false) {
+      document.documentElement.lang = language;
+      for (const item of translations) item.element.textContent = item[language];
+      for (const item of labelTranslations) item.element.setAttribute('aria-label', item[language]);
+      description.content = language === 'ja'
+        ? 'Ryotaro Kawataの研究CV。The University of Tokyo（東京大学）の博士課程学生。研究分野は機械学習理論、生成モデル、統計的学習。'
+        : englishDescription;
+      for (const button of languageButtons) {
+        button.setAttribute('aria-pressed', String(button.dataset.language === language));
+      }
+      if (remember) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', language);
+        window.history.replaceState(null, '', url);
+        try { localStorage.setItem('cv-language', language); } catch { /* Optional preference. */ }
+      }
+    }
+
+    for (const button of languageButtons) {
+      button.addEventListener('click', () => setLanguage(button.dataset.language, true));
+    }
+    window.addEventListener('popstate', () => setLanguage(preferredLanguage()));
+    setLanguage(preferredLanguage());
+    languageSwitch.hidden = false;
     const printButton = document.getElementById('print-cv');
     printButton.hidden = false;
     printButton.addEventListener('click', () => window.print());
