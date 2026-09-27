@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title data-ja="Ryotaro Kawata | 研究CV">Ryotaro Kawata | Research CV</title>
+  <title data-ja="川田 遼太郎 | 研究CV">Ryotaro Kawata | Research CV</title>
   <meta name="description" content="Research CV of Ryotaro Kawata, Ph.D. student at the University of Tokyo. Machine learning theory, generative models, and statistical learning.">
   <link rel="canonical" href="https://ryotaro-kawata-wa.github.io/">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23274690'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='30' fill='white'%3ERK%3C/text%3E%3C/svg%3E">
@@ -126,7 +126,7 @@
           <button class="print-button" type="button" id="print-cv" hidden data-ja="印刷 / PDF保存">Print / Save PDF</button>
         </div>
       </div>
-      <h1>Ryotaro Kawata</h1>
+      <h1 data-ja="川田 遼太郎">Ryotaro Kawata</h1>
       <p class="affiliation" data-ja="博士課程学生 · The University of Tokyo（東京大学）">Ph.D. student · The University of Tokyo</p>
       <p class="intro" data-ja="Taiji Suzuki（鈴木大慈 教授）の指導のもと、機械学習理論・生成モデル・統計的学習を研究しています。">Advised by Taiji Suzuki. My research interests include machine learning theory, generative models, and statistical learning.</p>
       <ul class="contacts" aria-label="Contact and profiles" data-ja-aria-label="連絡先・プロフィール">
@@ -201,7 +201,7 @@
           <li class="entry"><p class="date" data-ja="2024年">2024</p><div><h3 data-ja="2024年度統計関連学会連合大会 優秀報告賞">Good Presentation Awards, Japanese Joint Statistical Meeting</h3></div></li></ul>
       </section>
     </main>
-    <footer><span>Ryotaro Kawata</span><span><span data-ja="更新日">Updated</span> <time datetime="2026-09-27" data-ja="2026年9月27日">September 27, 2026</time></span></footer>
+    <footer><span data-ja="川田 遼太郎">Ryotaro Kawata</span><span><span data-ja="更新日">Updated</span> <time datetime="2026-09-27" data-ja="2026年9月27日">September 27, 2026</time></span></footer>
   </div>
   <script>
     // English stays readable without JavaScript. Japanese translations live next
@@ -237,7 +237,7 @@
       for (const item of translations) item.element.textContent = item[language];
       for (const item of labelTranslations) item.element.setAttribute('aria-label', item[language]);
       description.content = language === 'ja'
-        ? 'Ryotaro Kawataの研究CV。The University of Tokyo（東京大学）の博士課程学生。研究分野は機械学習理論、生成モデル、統計的学習。'
+        ? '川田 遼太郎の研究CV。The University of Tokyo（東京大学）の博士課程学生。研究分野は機械学習理論、生成モデル、統計的学習。'
         : englishDescription;
       for (const button of languageButtons) {
         button.setAttribute('aria-pressed', String(button.dataset.language === language));
